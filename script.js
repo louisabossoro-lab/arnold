@@ -55,6 +55,7 @@ const fleetVehicles = [
     const cardFor = ([image, name, type, body]) => `
       <article class="car-card">
         <div class="car-image" style="background-image: url('images/flotte/${image}')">
+          <button class="image-preview-button" type="button" data-image="images/flotte/${image}" aria-label="Voir ${name} en grand"></button>
           <a class="image-reserve-button" href="https://wa.me/23672424747" target="_blank" rel="noreferrer">Réserver</a>
         </div>
         <div class="car-body">
@@ -77,6 +78,29 @@ const fleetVehicles = [
       `;
     }).join('');
   }
+
+  const lightbox = document.querySelector('#image-lightbox');
+  const lightboxImage = lightbox?.querySelector('.lightbox-image');
+  const closeLightbox = () => {
+    if (!lightbox || !lightboxImage) return;
+    lightbox.hidden = true;
+    lightboxImage.removeAttribute('src');
+    document.body.classList.remove('lightbox-open');
+  };
+  document.querySelector('#fleet-grid')?.addEventListener('click', (event) => {
+    const previewButton = event.target.closest('.image-preview-button');
+    if (!previewButton || !lightbox || !lightboxImage) return;
+    lightboxImage.src = previewButton.dataset.image;
+    lightbox.hidden = false;
+    document.body.classList.add('lightbox-open');
+  });
+  lightbox?.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeLightbox();
+  });
 
   const contactForm = document.querySelector('#contact-form');
   contactForm?.addEventListener('submit', (event) => {
