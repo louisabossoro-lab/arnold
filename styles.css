@@ -58,6 +58,10 @@
     gap:20px
 }
 
+.car-image{
+    height:320px
+}
+
 .image-reserve-button{
     position:absolute;
     left:18px
