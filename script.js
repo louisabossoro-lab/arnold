@@ -61,7 +61,7 @@ const fleetVehicles = [
         <div class="car-body">
           <h3>${name}</h3>
           <p><strong>Type :</strong> ${type}<br /><strong>Configuration :</strong> ${body}<br /><span class="spec-note">Année, motorisation et tarif : à confirmer.</span></p>
-          <a href="#contact" target="_blank" rel="noreferrer">Demander les détails <span>↗</span></a>
+          <a href="#contact" target="_blank" rel="noreferrer">Demander les détails</a>
         </div>
       </article>
     `;
