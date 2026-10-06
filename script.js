@@ -55,8 +55,6 @@ const fleetVehicles = [
     const cardFor = ([image, name, type, body]) => {
       const message = [
         'Bonjour Société Albork,',
-        "Demande de réservation de véhicule selon l'image cliquée :",
-        `Image sélectionnée : ${image}`,
         `Modèle : ${name}`,
         `Type : ${type}`,
         `Configuration : ${body}`,
