@@ -35,6 +35,12 @@ const fleetVehicles = [
   ['IMG-20260822-WA0045.jpg', 'Mercedes-Benz Actros 3342', 'Camion de transport', 'Caisse à ridelles'],
   ['IMG-20260822-WA0046.jpg', 'Mercedes-Benz Actros', 'Camion de transport', 'Caisse bâchée'],
   ['IMG-20260822-WA0049.jpg', 'Mercedes-Benz Actros 3342', 'Camion de transport', 'Caisse à ridelles'],
+  ['IMG-20261004-WA0003.jpg', 'Mercedes-Benz Actros', 'Camion de transport', 'Caisse à ridelles'],
+  ['IMG-20261004-WA0004.jpg', 'Mercedes-Benz Actros 3342', 'Camion de transport', 'Caisse à ridelles'],
+  ['IMG-20261004-WA0005.jpg', 'Sinotruk HOWO', 'Camion de transport', 'Caisse à ridelles'],
+  ['IMG-20261004-WA0006.jpg', 'Mercedes-Benz Actros', 'Camion routier', 'Tracteur routier'],
+  ['IMG-20261004-WA0007.jpg', 'Sinotruk HOWO', 'Camion de transport', 'Caisse à ridelles'],
+  ['IMG-20261004-WA0009.jpg', 'Volvo', 'Camion routier', 'Tracteur routier'],
 ];
 
   const fleetGrid = document.querySelector('#fleet-grid');
