@@ -52,11 +52,22 @@ const fleetVehicles = [
         : type === 'Chariot élévateur'
           ? 'manutention'
           : 'transport';
-    const cardFor = ([image, name, type, body]) => `
+    const cardFor = ([image, name, type, body]) => {
+      const message = [
+        'Bonjour Société Albork,',
+        "Demande de réservation de véhicule selon l'image cliquée :",
+        `Image sélectionnée : ${image}`,
+        `Modèle : ${name}`,
+        `Type : ${type}`,
+        `Configuration : ${body}`,
+        'Pouvez-vous me communiquer sa disponibilité, son tarif et les conditions de location ?',
+      ].join('\n');
+      const whatsappUrl = `https://wa.me/23672424747?text=${encodeURIComponent(message)}`;
+      return `
       <article class="car-card">
         <div class="car-image" style="background-image: url('images/flotte/${image}')">
           <button class="image-preview-button" type="button" data-image="images/flotte/${image}" aria-label="Voir ${name} en grand"></button>
-          <a class="image-reserve-button" href="https://wa.me/23672424747" target="_blank" rel="noreferrer">Réserver</a>
+          <a class="image-reserve-button" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" aria-label="Réserver ${name} sur WhatsApp">Réserver</a>
         </div>
         <div class="car-body">
           <h3>${name}</h3>
@@ -65,6 +76,7 @@ const fleetVehicles = [
         </div>
       </article>
     `;
+    };
     fleetGrid.innerHTML = categories.map(([id, title, description]) => {
       const vehicles = fleetVehicles.filter((vehicle) => categoryFor(vehicle[2]) === id);
       return `
